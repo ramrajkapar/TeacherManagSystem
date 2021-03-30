@@ -9,22 +9,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
-    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="{{ asset('js/jquery-ui-datepicker/jquery-ui.css')}}">
-  <link rel="stylesheet" href="{{ asset('js/jquery-ui-datepicker/style.css')}}">
-  <script src="{{ asset('js/jquery-ui-datepicker/jquery-1.12.4.js')}}"></script>
-  <script src="{{ asset('js/jquery-ui-datepicker/jquery-ui.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('js/jquery-ui-datepicker/style.css')}}">
+    <script src="{{ asset('js/jquery-ui-datepicker/jquery-1.12.4.js')}}"></script>
+    <script src="{{ asset('js/jquery-ui-datepicker/jquery-ui.js')}}"></script>
     <style>
         .h3_teacher_custom {
             padding: 1rem;
             text-align: center;
         }
-        .error {
-      color: red;
-      font-weight: 700;
-   }
 
+        .error {
+            color: red;
+            font-weight: 500;
+        }
     </style>
 </head>
 
@@ -33,6 +33,16 @@
 
         <!--Write here body design -->
         <h4 class="h3_teacher_custom bg-primary text-white"><i>Fill the Lecturer's Details:</i></h4>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
 
         <form action="{{route('post_teacher')}}" method="post" id="teacher_form" name="teacher_form">
             @csrf
@@ -47,7 +57,7 @@
             </div>
 
             <div class="form-group row">
-            <div class="col-md-2">
+                <div class="col-md-2">
                 </div>
                 <label for="first_name" class="col-md-2 col-form-label">Gender:</label>
                 <div class="col-md-5">
@@ -67,7 +77,7 @@
             </div>
 
             <div class="form-group row">
-            <div class="col-md-2">
+                <div class="col-md-2">
                 </div>
                 <label for="moblile_no" class="col-md-2 col-form-label">Phone No:</label>
                 <div class="col-md-5">
@@ -76,7 +86,7 @@
             </div>
 
             <div class="form-group row">
-            <div class="col-md-2">
+                <div class="col-md-2">
                 </div>
                 <label for="moblile_no" class="col-md-2 col-form-label">E-mail:</label>
                 <div class="col-md-5">
@@ -85,7 +95,7 @@
             </div>
 
             <div class="form-group row">
-            <div class="col-md-2">
+                <div class="col-md-2">
                 </div>
                 <label for="village" class="col-md-2 col-form-label">Address:</label>
                 <div class="col-md-5">
@@ -94,7 +104,7 @@
             </div>
 
             <div class="form-group row">
-            <div class="col-md-2">
+                <div class="col-md-2">
                 </div>
                 <label for="nationality" class="col-md-2 col-form-label">Nationality:</label>
                 <div class="col-md-5">
@@ -108,7 +118,7 @@
             </div>
 
             <div class="form-group row">
-            <div class="col-md-2">
+                <div class="col-md-2">
                 </div>
                 <label for="first_name" class="col-md-2 col-form-label">Date of Birth:</label>
                 <div class="col-md-5">
@@ -117,7 +127,7 @@
             </div>
 
             <div class="form-group row">
-            <div class="col-md-2">
+                <div class="col-md-2">
                 </div>
                 <label for="first_name" class="col-md-2 col-form-label">Faculty:</label>
                 <div class="col-md-5">
@@ -133,7 +143,7 @@
             </div>
 
             <div class="form-group row">
-            <div class="col-md-2">
+                <div class="col-md-2">
                 </div>
                 <label for="first_name" class="col-md-2 col-form-label"> Sub Faculty:</label>
                 <div class="col-md-5">
@@ -158,14 +168,11 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{ asset('js/manage_teacher_form.js')}}"></script>
     <script>
-    var messages = {
-        ajax_faculties: "{{ URL::route('ajax_faculties') }}",
-        data_not_found: "{{ trans('error_message.no_records_found') }}",
-        token: "{{ csrf_token() }}",
-    };
-
-
-
+        var messages = {
+            ajax_faculties: "{{ URL::route('ajax_faculties') }}",
+            data_not_found: "{{ trans('error_message.no_records_found') }}",
+            token: "{{ csrf_token() }}",
+        };
     </script>
 </body>
 

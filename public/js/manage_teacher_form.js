@@ -1,3 +1,6 @@
+
+$(function() {
+
 $('.dob').datepicker({
      dateFormat: 'yy-mm-dd',
      changeMonth: true,
@@ -5,6 +8,8 @@ $('.dob').datepicker({
      });
 
 $('#subFacultyId').select2();
+
+
 $("#teacher_form").validate({
     rules: {
       name: "required",
@@ -14,10 +19,11 @@ $("#teacher_form").validate({
         email: true
       },
       address: "required",
-      nationality: "required",
+      country_id: "required",
       dob: "required",
       faculty_id: "required",
       gender: "required",
+      subFacultyId: "required",
     },
     messages: {
       name: "Please enter name",
@@ -25,7 +31,11 @@ $("#teacher_form").validate({
       email: {
         required: "Please enter email address",
         email: "Enter email address must be in the format of name@domain.com"
-      }
+      },
+      address: "Please enter address",
+      country_id: "Please select nationality",
+      faculty_id: "Please select faculty",
+      gender: "Please select gender"
     }
   });
 
@@ -52,4 +62,6 @@ $("#teacher_form").validate({
                 }
             });
     }
+});
+
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TeacherStoreRequest;
 use Illuminate\Http\Request;
 use App\Models\country;
 use App\Models\Faculty;
@@ -13,13 +14,13 @@ class TeacherController extends Controller
     public function getTeacherForm()
     {
         $nationalities = Country::getNationalitiesList();
-        //dd($nationalities);
         $faculties = Faculty::getFacultyList();
         return view('teacher.teacher', ['nationalities' => $nationalities, 'faculties' => $faculties]);
     }
 
-    public function storeTeacher(Request $request)
+    public function storeTeacher(TeacherStoreRequest $request)
     {
+        $validated = $request->validated();
         $teacherData = $request->all();
         $teacher = Teacher::storeTeacherData($teacherData);
 
