@@ -31,13 +31,14 @@ class TeacherController extends Controller
             }
         }
 
-        return redirect()->back()->withSuccess(['success'=>'Table Created Successfully']);
+        return redirect()->back()->withSuccess(['success' => 'Table Created Successfully']);
     }
 
     public function getTeacherList()
     {
         $teachers = Teacher::getTeacherList();
-        return view('teacher.teachers_list', ['teachers' => $teachers]);
+        
+        return view('teacher.teachers_list', ['teachers' => $teachers[0], 'subfaculties' => $teachers[1]]);
     }
 
     public function getSubFacultiesByFacultyId(Request $request)

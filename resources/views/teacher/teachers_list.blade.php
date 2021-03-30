@@ -34,7 +34,7 @@
                 <th>Date Of Birth</th>
                 <th>Nationality</th>
                 <th>Faculty</th>
-                <!-- <th>Sub Faculty</th> -->
+                <th>Sub Faculties</th>
             </thead>
 
             <tbody>
@@ -54,7 +54,7 @@
                     <td>{{$teacher->dob}} </td>
                     <td>{{$teacher->nationality}} </td>
                     <td>{{$teacher->faculty_name}} </td>
-                    <!-- <td>Test </td> -->
+                    <td>@if(array_key_exists($teacher->id,$subfaculties))  {{$subfaculties[$teacher->id]}} @endif</td>
 
                 </tr>
 
