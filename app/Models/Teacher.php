@@ -24,8 +24,21 @@ class Teacher extends Model
         'faculty_id'
     ];
 
+    public function teacherSubfaculties()
+    {
+        return $this->hasMany(TeacherSubFaculty::class);
+    }
+
     public static function storeTeacherData($teacherData)
     {
         return self::create($teacherData);
+    }
+
+    public static function getTeacherList()
+    {
+        return self::join('faculties','teachers.faculty_id','=','faculties.id')
+                ->join('countries','teachers.country_id','=','countries.id')
+                ->select('teachers.id','teachers.name','teachers.phone','teachers.email','teachers.dob','faculties.name as faculty_name','countries.nationality')
+                ->get();
     }
 }

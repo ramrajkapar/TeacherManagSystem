@@ -20,9 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/teacher', [App\Http\Controllers\TeacherController::class, 'getTeacher'])->name('get_teacher');
+Route::get('/teacher-form', [App\Http\Controllers\TeacherController::class, 'getTeacherForm'])->name('get_teacher');
 Route::post('/teacher', [App\Http\Controllers\TeacherController::class, 'storeTeacher'])->name('post_teacher');
-
+Route::get('/teacher-list', [App\Http\Controllers\TeacherController::class, 'getTeacherList'])->name('teacher_list');
 
 /**
  * Routing For ajax
