@@ -45,7 +45,7 @@ class Teacher extends Model
                 /**
                  * I will convert that query on eloquent query builder later.
                  */
-                $query = "select GROUP_CONCAT(sub_faculties.name SEPARATOR ' ') as subfaculties,ts.teacher_id from sub_faculties JOIN (select teacher_sub_faculties.* FROM teachers join teacher_sub_faculties on teachers.id=teacher_sub_faculties.teacher_id) AS ts ON sub_faculties.id = ts.sub_faculty_id group by ts.teacher_id";
+                $query = "select GROUP_CONCAT(sub_faculties.name SEPARATOR ' , ') as subfaculties,ts.teacher_id from sub_faculties JOIN (select teacher_sub_faculties.* FROM teachers join teacher_sub_faculties on teachers.id=teacher_sub_faculties.teacher_id) AS ts ON sub_faculties.id = ts.sub_faculty_id group by ts.teacher_id";
                 $sub_faculty = DB::select($query);
 
                 $faculties = array();
