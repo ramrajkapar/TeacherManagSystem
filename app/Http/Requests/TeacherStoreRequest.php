@@ -28,10 +28,11 @@ class TeacherStoreRequest extends FormRequest
             'name' => 'required|string|max:255',
             'phone' => 'required|max:12|unique:teachers',
             'gender' => 'required',
-            'address' => 'required',
+            'address' => 'required|max:255',
             'country_id' => 'required',
             'faculty_id' => 'required',
             "subFacultyId.*"  => "required|integer",
+            "dob" => "required|date"
         ];
     }
 
@@ -50,6 +51,7 @@ class TeacherStoreRequest extends FormRequest
             'gender.required' => 'Select the gender is required!',
             'country_id.required' => 'Nationality is required!',
             'faculty_id.required' => 'Faculty is required!',
+            'date.dob' => 'Date is required!'
         ];
     }
 }

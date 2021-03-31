@@ -25,6 +25,7 @@
             color: red;
             font-weight: 500;
         }
+
     </style>
 </head>
 
@@ -33,16 +34,7 @@
 
         <!--Write here body design -->
         <h4 class="h3_teacher_custom bg-primary text-white"><i>Fill the Lecturer's Details:</i></h4>
-
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+        
 
         <form action="{{route('post_teacher')}}" method="post" id="teacher_form" name="teacher_form">
             @csrf
@@ -52,7 +44,7 @@
                 <label for="first_name" class="col-md-2 col-form-label">Lecturer's Name:</label>
                 <div class="col-md-5">
                     <input type="text" class="form-control" id="name" name="name" placeholder="Enter Lecturer's Name">
-                    <label style="color:red;font-weight:700;display:none" id="name_label">Enter Lecturer's Name!</label>
+                    <label id="name-error-custom" class="error" for="name" style="display:block">{{ $errors->first('name') }}</</label>
                 </div>
             </div>
 
@@ -73,6 +65,7 @@
                         <input class="form-check-input" type="radio" name="gender" id="Others" value="Others">
                         <label class="form-check-label" for="girl">Others</label>
                     </div>
+                    <label id="phone-error-custom" class="error" for="gender" style="display:block">{{ $errors->first('gender') }}</label>
                 </div>
             </div>
 
@@ -82,6 +75,7 @@
                 <label for="moblile_no" class="col-md-2 col-form-label">Phone No:</label>
                 <div class="col-md-5">
                     <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number">
+                    <label id="phone-error-custom" class="error" for="phone" style="display:block">{{ $errors->first('phone') }}</label>
                 </div>
             </div>
 
@@ -91,6 +85,7 @@
                 <label for="moblile_no" class="col-md-2 col-form-label">E-mail:</label>
                 <div class="col-md-5">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter E-mail">
+                    <label id="phone-error-custom" class="error" for="email" style="display:block">{{ $errors->first('email') }}</label>
                 </div>
             </div>
 
@@ -100,6 +95,7 @@
                 <label for="village" class="col-md-2 col-form-label">Address:</label>
                 <div class="col-md-5">
                     <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address">
+                    <label id="phone-error-custom" class="error" for="address" style="display:block">{{ $errors->first('address') }}</label>
                 </div>
             </div>
 
@@ -114,6 +110,7 @@
                         <option value="{{$id}}">{{$nationality}}</option>
                         @endforeach
                     </select>
+                    <label id="phone-error-custom" class="error" for="country_id" style="display:block">{{ $errors->first('country_id') }}</label>
                 </div>
             </div>
 
@@ -123,6 +120,7 @@
                 <label for="first_name" class="col-md-2 col-form-label">Date of Birth:</label>
                 <div class="col-md-5">
                     <input type="text" class="form-control dob" id="dob" name="dob" placeholder="Enter date of birth">
+                    <label id="phone-error-custom" class="error" for="dob" style="display:block">{{ $errors->first('dob') }}</label>
                 </div>
             </div>
 
@@ -137,7 +135,7 @@
                         <option value="{{$id}}">{{$name}}</option>
                         @endforeach
                     </select>
-                    <label style="color:red; font-weight:700;display:none" id="class_label">Select Faculty<label>
+                    <label id="phone-error-custom" class="error" for="faculty_id" style="display:block">{{ $errors->first('faculty_id') }}</label>
                 </div>
 
             </div>
@@ -149,7 +147,6 @@
                 <div class="col-md-5">
                     <select class="form-control" id="subFacultyId" name="subFacultyId[]" multiple="multiple">
                     </select>
-                    <label style="color:red; font-weight:700;display:none" id="class_label">Select Faculty<label>
                 </div>
 
             </div>

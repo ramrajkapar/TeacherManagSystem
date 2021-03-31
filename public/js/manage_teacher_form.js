@@ -23,7 +23,7 @@ $("#teacher_form").validate({
       dob: "required",
       faculty_id: "required",
       gender: "required",
-      subFacultyId: "required",
+      
     },
     messages: {
       name: "Please enter name",
