@@ -434,7 +434,7 @@
     </div>
     <h1 class="custom_heading_home bg-primary text-white">Welcome To Teacher-Module Management System</h1>
     <div class="row" style="padding-top:4rem;">
-    <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
         <div class="col-md-4">
             <a href="{{route('get_teacher')}}" class="btn btn-success a_custom">Go to create Teacher Form Page</a>
         </div>
@@ -443,6 +443,7 @@
             <a href="{{route('teacher_list')}}" class="btn btn-success a_custom">Go to show the list of Teachers</a>
         </div>
     </div>
+    <h2>Developed By Ramraj Kapar</h2>
 </body>
 
 </html>
