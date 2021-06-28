@@ -443,7 +443,6 @@
             <a href="{{route('teacher_list')}}" class="btn btn-success a_custom">Go to show the list of Teachers</a>
         </div>
     </div>
-    <h2>Developed By Ramraj Kapar</h2>
 </body>
 
 </html>
