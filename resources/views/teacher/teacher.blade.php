@@ -148,10 +148,15 @@
                     <select class="form-control" id="subFacultyId" name="subFacultyId[]" multiple="multiple">
                     </select>
                 </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary custom_add_btn">+ Add</button>
+                </div>
 
             </div>
 
+            <div id="add_custom_field">
 
+            </div>
             <div class="form-group row">
                 <div class="offset-md-4 col-md-9">
                     <button type="submit" class="btn btn-primary">Submit</button>

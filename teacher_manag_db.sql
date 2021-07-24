@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 11:33 AM
+-- Generation Time: Jul 24, 2021 at 11:23 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -151,7 +151,19 @@ INSERT INTO `sub_faculties` (`id`, `faculty_id`, `name`, `description`, `created
 (8, 3, 'Nepali', NULL, NULL, NULL),
 (9, 3, 'Mathematics', NULL, NULL, NULL),
 (10, 3, 'Science', NULL, NULL, NULL),
-(11, 3, 'Science', 'Health', NULL, NULL);
+(11, 3, 'Science', 'Health', NULL, NULL),
+(12, 1, 'Biomolecular engineering', 'Biomolecular engineering', NULL, NULL),
+(13, 1, 'Materials engineering', 'Materials engineering', NULL, NULL),
+(14, 1, 'Corrosion engineering', 'Corrosion engineering', NULL, NULL),
+(15, 1, 'Environmental Engineering', '\r\nSubdiscipline	Scope	Major specialties\r\nEnvironmental Engineering', NULL, NULL),
+(16, 1, 'Transport engineering', 'Transport engineering', NULL, NULL),
+(17, 1, 'Water resources engineering', 'Water resources engineering', NULL, NULL),
+(18, 1, 'Electronic engineering', '\r\nSubdiscipline	Scope	Major specialties\r\nElectronic engineering', NULL, NULL),
+(19, 1, 'Power engineering', 'Power engineering', NULL, NULL),
+(20, 1, 'Optical engineering', 'Optical engineering', NULL, NULL),
+(21, 1, 'Acoustical engineering', 'Acoustical engineering', NULL, NULL),
+(22, 1, 'Manufacturing engineering', 'Manufacturing engineering', NULL, NULL),
+(23, 1, 'Thermal engineering', 'Thermal engineering', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -178,11 +190,7 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `name`, `gender`, `phone`, `email`, `address`, `country_id`, `dob`, `faculty_id`, `created_at`, `updated_at`) VALUES
-(1, 'se', 'Male', '9809655620', 'adminemp1@gmail.com', 'rz-123, dawarka, newdelhi', 1, '2021-03-13', 2, '2021-03-30 01:05:27', '2021-03-30 01:05:27'),
-(2, 'se', 'Male', '9809655621', 'adminemp2@gmail.com', 'rz-123, dawarka, newdelhi', 1, '2021-03-13', 3, '2021-03-30 01:06:26', '2021-03-30 01:06:26'),
-(3, 'Ramraj', 'Male', '9816836473', 'ramraj.kapar@gmail.com', 'nakkhu, Lalitpur', 1, '2013-03-12', 2, '2021-03-30 02:17:19', '2021-03-30 02:17:19'),
-(5, 'Manoj', 'Male', '9816836474', 'manoj@gmail.com', 'New Delhi', 2, '2013-03-13', 3, '2021-03-30 02:44:25', '2021-03-30 02:44:25'),
-(6, 'Raffsan', 'Female', '9814867344', 'raffsan@yahoo.com', 'Janakpur', 1, '2001-03-06', 1, '2021-03-30 02:48:52', '2021-03-30 02:48:52');
+(1, 'ramraj', 'Male', '9816836473', 'ramraj.kapar@gmail.com', 'nakkhu, Lalitpur', 1, '2013-03-13', 1, '2021-03-30 07:11:19', '2021-03-30 07:11:19');
 
 -- --------------------------------------------------------
 
@@ -203,16 +211,9 @@ CREATE TABLE `teacher_sub_faculties` (
 --
 
 INSERT INTO `teacher_sub_faculties` (`id`, `teacher_id`, `sub_faculty_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 5, '2021-03-30 01:05:27', '2021-03-30 01:05:27'),
-(2, 1, 6, '2021-03-30 01:05:27', '2021-03-30 01:05:27'),
-(3, 2, 8, '2021-03-30 01:06:26', '2021-03-30 01:06:26'),
-(4, 2, 10, '2021-03-30 01:06:27', '2021-03-30 01:06:27'),
-(5, 3, 5, '2021-03-30 02:17:20', '2021-03-30 02:17:20'),
-(6, 3, 6, '2021-03-30 02:17:20', '2021-03-30 02:17:20'),
-(7, 5, 9, '2021-03-30 02:44:25', '2021-03-30 02:44:25'),
-(8, 5, 10, '2021-03-30 02:44:25', '2021-03-30 02:44:25'),
-(9, 6, 1, '2021-03-30 02:48:52', '2021-03-30 02:48:52'),
-(10, 6, 2, '2021-03-30 02:48:53', '2021-03-30 02:48:53');
+(1, 1, 1, '2021-03-30 07:11:19', '2021-03-30 07:11:19'),
+(2, 1, 2, '2021-03-30 07:11:19', '2021-03-30 07:11:19'),
+(3, 1, 3, '2021-03-30 07:11:20', '2021-03-30 07:11:20');
 
 -- --------------------------------------------------------
 
@@ -329,19 +330,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `sub_faculties`
 --
 ALTER TABLE `sub_faculties`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `teacher_sub_faculties`
 --
 ALTER TABLE `teacher_sub_faculties`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
